@@ -9,7 +9,7 @@
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <!--Toastify-->>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    
+
     <title>Autenticacion-correo</title>
 </head>
 
@@ -27,10 +27,12 @@
                 <ul class="navbar-nav ms-auto">
 
                     <li class="nav-item">
-                        <a class="nav-link logged-out" href="#" data-bs-toggle="modal" data-bs-target="#signinModal">Sign in</a>
+                        <a class="nav-link logged-out" href="#" data-bs-toggle="modal"
+                            data-bs-target="#signinModal">Sign in</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link logged-out" href="#" data-bs-toggle="modal" data-bs-target="#signupModal">Sign up</a>
+                        <a class="nav-link logged-out" href="#" data-bs-toggle="modal"
+                            data-bs-target="#signupModal">Sign up</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link logged-in" href="#" id="logout">Logout</a>
@@ -40,6 +42,28 @@
             </div>
         </div>
     </nav>
+
+    <!--CRUD - diario digital para un profe o estudiante -->
+    <div class="container">
+        <div class="row">
+            <div class="col md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="h4">Agregar tarea o nota </h1>
+                        <form id="task-form">
+                            <input type="text" id="task-title" class="form-control mb-3" placeholder="Titulo tarea"
+                                autofocus>
+                            <label for="description">Descripcion: </label>
+                            <textarea id="task-description" rows="3" class="form-control mb-3"></textarea>
+
+                            <button class="btn btn-primary" id="btn-task-form">Guardar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Signin Modal -->
     <div class="modal fade" id="signinModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -56,10 +80,15 @@
                         <input type="email" id="signin-email" class="form-control mb-3" placeholder="Email" required>
 
                         <label for="password">Password: </label>
-                        <input type="password" id="signin-password" class="form-control mb-3" placeholder="********" required>
+                        <input type="password" id="signin-password" class="form-control mb-3" placeholder="********"
+                            required>
 
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" class="btn btn-primary w-100 mb-4">
                             Login
+                        </button>
+
+                        <button type="button" class="btn btn-info" id="googleLogin">
+                            Google
                         </button>
                     </form>
 
@@ -104,12 +133,12 @@
             </div>
         </div>
     </div>
-<!--Bootstrap-->
+    <!--Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
-<!--Toastify-->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!--Toastify-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="js/script.js" type="module"></script>
 </body>
 

@@ -5,7 +5,10 @@
         // import { } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js"
          import { getFirestore,
         addDoc,
+        getDocs,
         collection,
+        doc,
+        onSnapshot,
         } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"
 
 
@@ -34,6 +37,12 @@
         export const saveTask = (title, description) => 
           // console.log(title, description);
           addDoc(collection(db, "tasks"), {title, description})
+
+        export const getTasks = () => getDocs(collection(db, "tasks"))
+
+        export const onGetTasks = (callback) => 
+        onSnapshot(collection(db, "tasks"), callback);
+
 
       
 

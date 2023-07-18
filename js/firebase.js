@@ -8,6 +8,10 @@
         getDocs,
         collection,
         onSnapshot,
+        deleteDoc,
+        doc,
+        getDoc,
+        updateDoc
         } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"
 
 
@@ -51,7 +55,14 @@
        //   collection
         //}
 
+        export const deleteTask = (id) => deleteDoc(doc(db,"tareas", id));
 
+        // Se crea una funcion que traiga o que obtenga una tarea individual
+        export const getTask = (id) => getDoc(doc(db, "tareas", id))
+
+        // Crear una funcion que actualice una tarea
+
+        export const updateTask = (id, NewFieldsTask) => updateDoc(doc(db, "tareas", id), NewFieldsTask);
       
 
         

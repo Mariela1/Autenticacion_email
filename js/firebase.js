@@ -7,7 +7,6 @@
         addDoc,
         getDocs,
         collection,
-        doc,
         onSnapshot,
         } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"
 
@@ -32,16 +31,25 @@
         const analytics = getAnalytics(app);
         export const auth = getAuth(app);
         
+        // Conexion a la base de datos
         export const db = getFirestore();
 
         export const saveTask = (title, description) => 
-          // console.log(title, description);
-          addDoc(collection(db, "tasks"), {title, description})
+          //console.log(title, description);
+        addDoc(collection(db, "tareas"), {title, description})
+       
+        // Listar datos
+        //export const getTasks = () => console.log('tasks-list');
+        export const getTasks = () => getDocs(collection(db, "tareas"))
 
-        export const getTasks = () => getDocs(collection(db, "tasks"))
+       
+       // generando la nueva funcion
+        export const onGetTasks =  (callback) => onSnapshot(collection(db, "tareas"), callback);
 
-        export const onGetTasks = (callback) => 
-        onSnapshot(collection(db, "tasks"), callback);
+      // export {
+       //   onSnapshot,
+       //   collection
+        //}
 
 
       
